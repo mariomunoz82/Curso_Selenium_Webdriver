@@ -1,1 +1,9 @@
-Demo del contenido
+Comandos maas usaados en Git
+
+git config --global user.name "mariomunoz82"
+gitt config --global user.email "marioalexis.2007@gmail.com"
+git init /**inicializar git*/
+git add . /**agregar el lcontenido a subir al repositorio*/
+git status /** ver el status del repositorio**/
+git commit -m "se inicia el proyectto
+git checkout -- .
