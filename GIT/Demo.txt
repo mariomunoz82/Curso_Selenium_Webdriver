@@ -1,10 +1,21 @@
 Comandos maas usaados en Git
-
+/****identificarse en Git***/
 git config --global user.name "mariomunoz82"
 gitt config --global user.email "marioalexis.2007@gmail.com"
+
+
 git init /**inicializar git*/
 git add . /**agregar el contenido a subir al repositorio*/
 git status /** ver el status del repositorio**/
-git commit -m "se inicia el proyecto"
+git commit -m "se inicia el proyecto"  /***
+
+
 git checkout -- . /**restaurar archivos borrados dell repositorio*/
 git reset .mp4 /*** quita archivos con la extension .mp4 del repositorio*/
+git add *.xlsx /*** subir todos los archivos de Excel**/
+git log /*** visualizar un log de todas las transacciones realizadas
+git add .\Evidencias\   /* agregar toda una carpeta al repositorio**/
+git config --global alias.lg "log --oneline --decorate --all --graph" /*creando un alias**/
+git config -- global alias.lg "status -s -b"
+
+git config --global -e /****abrir el archivo de configuracion***/

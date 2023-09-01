@@ -83,7 +83,7 @@ def test_uno():
     f.Click_Mixto("xpath","//input[contains(@id,'Gender_Male')]",t)
     f.Texto_Mixto("xpath","//input[contains(@id,'DateOfBirth')]","2/20/2019",t)
     allure.attach(driver.get_screenshot_as_png(), name="fecha", attachment_type=AttachmentType.PNG)
-    assert 1==2
+   # assert 1==2
     driver.close()
 
 

@@ -1,6 +1,0 @@
-Escribiendo en el campo Email el texto -> admin@yourstore.com
-Escribiendo en el campo Password el texto -> admin
-Entrando al sistema
-Entrando el sistema uno
-Escribiendo en el campo //input[contains(@id,'SearchFirstName')] el texto -> victoria
-Escribiendo en el campo //input[contains(@id,'DateOfBirth')] el texto -> 2/20/2019

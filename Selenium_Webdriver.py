@@ -13,10 +13,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import TimeoutException
+from webdriver_manager.chrome import ChromeDriverManager
 
 #driver=webdriver.Chrome("C:/Drivers/chromedriver.exe")
 options = webdriver.ChromeOptions()
+# driver = webdriver.Chrome(options=options)
 driver = webdriver.Chrome(options=options)
+
+
 driver.get('https://demoqa.com/text-box')
 driver.maximize_window()
 t=1.2

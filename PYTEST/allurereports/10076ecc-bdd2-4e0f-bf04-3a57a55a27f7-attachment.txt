@@ -1,8 +1,0 @@
-Escribiendo en el campo //input[contains(@name,'username')] el texto -> Admin
-Escribiendo en el campo //input[contains(@type,'password')] el texto -> admin123
-Entrando al sistema
-Entrando el sistema dos
-Escribiendo en el campo (//input[@class='oxd-input oxd-input--active'])[2] el texto -> Fiona.Grace
-Escribiendo en el campo //input[contains(@placeholder,'Type for hints...')] el texto -> Mario Munoz
-Salida del login uno
-Salida del login uno
