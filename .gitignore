@@ -1,2 +1,5 @@
 .spyproject/
 .pytest_cache/
+PYTEST/allurereports/
+.gitignore
+__pycache__/
