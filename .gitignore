@@ -2,4 +2,6 @@
 .pytest_cache/
 PYTEST/allurereports/
 .gitignore
-__pycache__/
+PYTEST__pycache__/
+PYTEST/.pytest_cache/
+Proyecto_BDD/.idea/
