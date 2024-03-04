@@ -8,7 +8,7 @@ git init /**inicializar git*/
 git status /** ver el status del repositorio**/
 git add . /**agregar el contenido a subir al repositorio*/
 git commit -m "se inicia el proyecto"  /***hacer el commit***/
-git push /** cuando el proyecto ya esta creado**/
+git push -u origin master /** cuando el proyecto ya esta creado**/
 
 /***para primera vez****/
 git branch -M master

@@ -11,13 +11,15 @@ from selenium.common.exceptions import TimeoutException
 from Funciones import Funciones_Globales
 from Page_Login import Funciones_Login
 from selenium.webdriver import ActionChains
+from selenium.webdriver.chrome.options import Options
 t=.8
 
 
 @pytest.fixture(scope='module')
 def setup_Login():
     global driver, f
-    driver = webdriver.Chrome(executable_path="C:\Drivers\chromedriver.exe")
+    options = Options()
+    driver = webdriver.Chrome(options=options)
     driver.get("https://opensource-demo.orangehrmlive.com/")
     driver.maximize_window()
     driver.implicitly_wait(20)

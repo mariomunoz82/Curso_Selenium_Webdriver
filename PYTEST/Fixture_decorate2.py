@@ -13,6 +13,7 @@ from selenium.common.exceptions import TimeoutException
 from Funciones import Funciones_Globales
 # from Page_Login import Funciones_Login
 # from selenium.webdriver import ActionChains
+from selenium.webdriver.chrome.options import Options
 t=.8
 
 #Para imagenes de Error
@@ -29,7 +30,7 @@ def log_on_failure(request):
 def setup_login_uno():
     global driver, f
     #driver = webdriver.Chrome("C:\Drivers\chromedriver.exe")
-    options = webdriver.ChromeOptions()
+    options = Options()
     driver = webdriver.Chrome(options=options)
     driver.get("https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F")
     driver.maximize_window()
@@ -41,13 +42,13 @@ def setup_login_uno():
     print("Entrando al sistema")
     yield
     print("Salida del login uno")
-    driver.close()
+    #driver.close()
 
 @pytest.fixture(scope='module')
 def setup_Login_dos():
     global driver, f
     #driver = webdriver.Chrome("C:\Drivers\chromedriver.exe")
-    options = webdriver.ChromeOptions()
+    options = Options()
     driver = webdriver.Chrome(options=options)
     driver.get("https://opensource-demo.orangehrmlive.com/")
     driver.maximize_window()
@@ -72,13 +73,13 @@ def test_uno():
     f.Click_Mixto("xpath","(//p[contains(.,'Customers')])[2]",t)
     f.Texto_Mixto("xpath","//input[contains(@id,'SearchFirstName')]","victoria",t)
     allure.attach(driver.get_screenshot_as_png(), name="buscando_nombre", attachment_type=AttachmentType.PNG)
-    f.Click_Mixto("xpath","//input[contains(@id,'SearchFirstName')]",1.5)
+    f.Click_Mixto("xpath","//button[contains(@id,'search-customers')]",1.5)
     allure.attach(driver.get_screenshot_as_png(),name="customers",attachment_type=AttachmentType.PNG)
     #Creando un nuevo usuario
     f.Click_Mixto("xpath","//a[@href='/Admin/Customer/Create']",t)
     email=driver.find_element("xpath","//input[contains(@id,'Email')]")
     email.send_keys("juan@gmail.com"+Keys.TAB+"12345"+Keys.TAB+"Juan"+Keys.TAB+"Perez")
-    time.sleep(3)
+    time.sleep(t)
     allure.attach(driver.get_screenshot_as_png(), name="datos", attachment_type=AttachmentType.PNG)
     f.Click_Mixto("xpath","//input[contains(@id,'Gender_Male')]",t)
     f.Texto_Mixto("xpath","//input[contains(@id,'DateOfBirth')]","2/20/2019",t)
