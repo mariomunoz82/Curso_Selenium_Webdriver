@@ -1,0 +1,63 @@
+GIT BASH
+
+/*** Limpiar la consolla
+clear  
+
+/*** Visualizar el directorio en que nos encontramos
+pwd
+
+/**crear un archivo
+touch hola.txtt
+
+/*** visualizar un archivo 
+
+cat hola .txt
+
+*** Ver los comandos utilizados
+history
+
+/*** Repetir un comando (se coloca el codigo del comando con un signo !)
+!343
+
+/** Borrar un archivo
+git rm hola.txt
+
+/** Para deshacer el add . y ya no guardar los cambios
+git rm --cached prueba.txt
+
+/*** Configuracion de usuario y correo 
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+
+/**** recuperar archivos borrados del repositorio (tiene que haber hecho commit antes)
+git restore
+
+/*****borrar un archivo del repositorio
+git reset nombredelarchivo.extension
+
+
+code prueba.txt (nos abre el visual studio code)
+
+/**** para ver los log y todos los commits que se han hecho 
+git log
+Con barra espaciadora se pueden mostrar todos los log en caso que no los muestre y muestre los dos puntos (:)
+
+/****** moverse entre los commits
+
+git checkout 979c9eca892608709785fa3b5936febc116b529c (me regresa a un estado anterior antes del ultimo commit)
+
+git checkout master --> nos regresa a la rama master donde estan todos los cambios
+
+git checkout (codigo del commit que se obtiene de git log ) para moverse entre las ramas
+
+/***Comandos cuando ingreaas a Vim
+ESC --> :wq (para salir de vim)
+Presionas i , para el modo insertar
+ESC --> Shift+zz , Otra manera de salir de vim
+Se pueden agregar coemntarios multilinea para los commits desde vim
+
+
+presionar q (cuando se da el comando git log y aparecen dos puntos (:))
+git show (Nos muestra lo que se agrego de un commit a otro)
+
+
