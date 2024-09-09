@@ -60,4 +60,6 @@ Se pueden agregar coemntarios multilinea para los commits desde vim
 presionar q (cuando se da el comando git log y aparecen dos puntos (:))
 git show (Nos muestra lo que se agrego de un commit a otro)
 
+/** Para ver la diferencia entre los commitsq
+
 
