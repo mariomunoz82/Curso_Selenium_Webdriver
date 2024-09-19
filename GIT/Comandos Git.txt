@@ -25,41 +25,52 @@ git rm hola.txt
 /** Para deshacer el add . y ya no guardar los cambios
 git rm --cached prueba.txt
 
+code prueba.txt (nos abre el visual studio code)
+
 /*** Configuracion de usuario y correo 
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 
-/**** recuperar archivos borrados del repositorio (tiene que haber hecho commit antes)
+/**** GIT RESTORE , recuperar archivos borrados del repositorio (tiene que haber hecho commit antes)
 git restore
 
-/*****borrar un archivo del repositorio
-git reset nombredelarchivo.extension
+/*****GIT RESET
+git reset nombredelarchivo.extension (BORRA EL ARCHIVO DEL REPOSITORIO9
+git reset 979c9eca89260870978 --hard, (borra todos los cambios hasta este commit)
+git reset 979c9eca89260870978 --soft, regresa a este commit pero mantiene los cambios en el staging
 
 
-code prueba.txt (nos abre el visual studio code)
-
-/**** para ver los log y todos los commits que se han hecho 
+/**** GIT LOG, para ver los log y todos los commits que se han hecho 
 git log
-Con barra espaciadora se pueden mostrar todos los log en caso que no los muestre y muestre los dos puntos (:)
+Con barra espaciadora se pueden mostrar todos los log en caso que no los muestre y muestre los dos puntos (:), q para salir
 
-/****** moverse entre los commits
+git log --stat, comando para ver todos los cambios que se han hecho en los diferentes commits
+
+
+/****** GIT CHECKOUT, moverse entre los commits
 
 git checkout 979c9eca892608709785fa3b5936febc116b529c (me regresa a un estado anterior antes del ultimo commit)
-
 git checkout master --> nos regresa a la rama master donde estan todos los cambios
-
 git checkout (codigo del commit que se obtiene de git log ) para moverse entre las ramas
 
-/***Comandos cuando ingreaas a Vim
+
+
+/***COMANDOS DE VIM 
 ESC --> :wq (para salir de vim)
 Presionas i , para el modo insertar
 ESC --> Shift+zz , Otra manera de salir de vim
 Se pueden agregar coemntarios multilinea para los commits desde vim
-
+:wq! para abortar el commit
 
 presionar q (cuando se da el comando git log y aparecen dos puntos (:))
+
+/** GIT SHOW **/
 git show (Nos muestra lo que se agrego de un commit a otro)
 
-/** Para ver la diferencia entre los commitsq
+/** GIT DIFF
+git diff 79c9eca892608709 92608709785fa3 , mostrar las diferencias entre un commit y otro
 
 
+/** GIT COMMIT -A
+git commit -a, esto manda directamente al staging, sin necesidad de hacer git add, es decir hace commit y add al mismo tiempo
+git commit -am " descripcion del commit",  la misma funcionalidad pero este no entra a vim
