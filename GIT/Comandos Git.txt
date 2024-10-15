@@ -65,7 +65,7 @@ Se pueden agregar coemntarios multilinea para los commits desde vim
 presionar q (cuando se da el comando git log y aparecen dos puntos (:))
 
 /** GIT SHOW **/
-git show (Nos muestra lo que se agrego de un commit a otro)
+git show,  Nos muestra las diferencias que hay del commit actual al commit anterior
 
 /** GIT DIFF
 git diff 79c9eca892608709 92608709785fa3 , mostrar las diferencias entre un commit y otro
@@ -74,3 +74,14 @@ git diff 79c9eca892608709 92608709785fa3 , mostrar las diferencias entre un comm
 /** GIT COMMIT -A
 git commit -a, esto manda directamente al staging, sin necesidad de hacer git add, es decir hace commit y add al mismo tiempo
 git commit -am " descripcion del commit",  la misma funcionalidad pero este no entra a vim
+
+/** GIT BRANCH
+
+git branch nombrerama, Crea una nueva rama
+gir checkout nombrerama, cambias de la rama principal a la nueva rama o viceversa
+git branch, para ver las ramas creadas.
+
+/** GIT MERGE
+git merge nombrerama, dependiendo de adonde se quiera llevar los cambios debes de colocarte en esa rama, por ejemplo si quieres llevar los cambios hacia la rama master se debe asegurar que nos encontramos en la rama master antes de hacer el merge.
+
+git merge Rama1 --no-edit para evitar que VIM se abra
