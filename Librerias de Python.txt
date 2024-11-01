@@ -20,6 +20,7 @@ pip install openpyxl
 pip install scrapy-zyte-smartproxy 
 pip install cufflinks 
 pip install chromedriver_py
+pip install chromedriver_py --upgrade
 
 /** Correr un archivo de scrapy en consola*/ 
 scrapy runspider 3_Nivel4_W3S.py -o w3s.json -t json
@@ -28,9 +29,14 @@ scrapy runspider 3_Nivel4_W3S.py -o w3s.json -t json
 pytest .\Asserts_3.py -s -v -m login
 
 
-from selenium.webdriver.chrome.options import Options
-options = Options()
-driver = webdriver.Chrome(options=options)
+from selenium.webdriver.chrome.service import Service
+from chromedriver_py import binary_path
+
+service=webdriver.ChromeService(executable_path=binary_path)
+driver=webdriver.Chrome(service=service)
+
+/** arrancar el server de django**/
+pipenv run python manage.py runserver
 
 
 encoding='ISO-8859-1'
