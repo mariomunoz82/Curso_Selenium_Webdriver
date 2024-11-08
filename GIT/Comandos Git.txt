@@ -5,6 +5,7 @@ clear
 
 /*** Visualizar el directorio en que nos encontramos
 pwd
+ls -l para ver el contenido del directorio
 
 /**crear un archivo
 touch hola.txtt
@@ -98,4 +99,8 @@ git remote remove origin, para eliminar un origin cuando se ha creado mal el rep
 
 rm -rf .git , para eliminar un repositorio local al crearlo por error
 
-ssh-keygen -t rsa -b 4096 -C "marioalexis.2007@gmail.com" , para crear una llave publica y privada SSH 
+ssh-keygen -t rsa -b 4096 -C "marioalexis.2007@gmail.com" , para crear una llave publica y privada SSH , esto es por equipo 
+no por repositorio, colocarte en c/user/mario por ejemplo.
+
+eval $(ssh-agent -s) para verificar que el servicio este corriendo
+ssh-add ~/.ssh/id_rsa , añadir la llave privada que hemos creado, debes de estar en el directorio donde estan las llaves .ssh
