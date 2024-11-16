@@ -99,6 +99,8 @@ git remote remove origin, para eliminar un origin cuando se ha creado mal el rep
 
 rm -rf .git , para eliminar un repositorio local al crearlo por error
 
+git remote set-url origin url, donde la url es la obtenida del ssh del repositorio de github y es para cambiar el remote de https a ssh
+/*******LLAVES SSH**********************/
 ssh-keygen -t rsa -b 4096 -C "marioalexis.2007@gmail.com" , para crear una llave publica y privada SSH , esto es por equipo 
 no por repositorio, colocarte en c/user/mario por ejemplo.
 
