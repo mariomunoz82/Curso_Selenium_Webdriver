@@ -58,6 +58,8 @@ alias rama="git log --all --graph --decorate --oneline" , para crear un alias do
 es el comando a asociar, luego colocar en git solo el nombre del alias para que se ejecute el comando
 
 unalias rama, para eliminar un alias donde rama es el nombre del alias
+
+
 /****** GIT CHECKOUT, moverse entre los commits
 
 git checkout 979c9eca892608709785fa3b5936febc116b529c (me regresa a un estado anterior antes del ultimo commit)
@@ -118,3 +120,15 @@ no por repositorio, colocarte en c/user/mario por ejemplo.
 
 eval $(ssh-agent -s) para verificar que el servicio este corriendo
 ssh-add ~/.ssh/id_rsa , añadir la llave privada que hemos creado, debes de estar en el directorio donde estan las llaves .ssh
+
+/******GIT TAG******/
+git tag -a nombretag -m "descripcion" codigo del commit , para agregar un TAG, se pueden visualizar especialmente en Git Hub
+
+git tag , para ver los tags que se han creado
+
+git push origin --tags, para subir los tags creados a Github
+
+git show-ref --tags, muestra la referencia del tag creado
+
+git tag -d nombredelTAg , para borrar el tag
+git push origin:ref/tags/v11.1 para borrar de github
