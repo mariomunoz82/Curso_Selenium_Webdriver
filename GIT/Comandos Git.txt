@@ -1,5 +1,7 @@
 GIT BASH
 
+gitk para abrir un entorno grafico de la consola
+
 /*** Limpiar la consolla
 clear  
 
@@ -83,6 +85,7 @@ git show,  Nos muestra las diferencias que hay del commit actual al commit anter
 /** GIT DIFF
 git diff 79c9eca892608709 92608709785fa3 , mostrar las diferencias entre un commit y otro
 
+git push origin Rama1, para hacer push a las demas ramas que no sean main y subirlas a github
 
 /** GIT COMMIT -A
 git commit -a, esto manda directamente al staging, sin necesidad de hacer git add, es decir hace commit y add al mismo tiempo
@@ -91,7 +94,7 @@ git commit -am " descripcion del commit",  la misma funcionalidad pero este no e
 /** GIT BRANCH
 
 git branch nombrerama, Crea una nueva rama
-gir checkout nombrerama, cambias de la rama principal a la nueva rama o viceversa
+git checkout nombrerama, cambias de la rama principal a la nueva rama o viceversa
 git branch, para ver las ramas creadas.
 
 /** GIT MERGE
@@ -115,11 +118,16 @@ git remote set-url origin url, donde la url es la obtenida del ssh del repositor
 
 
 /*******LLAVES SSH**********************/
+
+/*** Crear la llave****/
 ssh-keygen -t rsa -b 4096 -C "marioalexis.2007@gmail.com" , para crear una llave publica y privada SSH , esto es por equipo 
 no por repositorio, colocarte en c/user/mario por ejemplo.
 
 eval $(ssh-agent -s) para verificar que el servicio este corriendo
 ssh-add ~/.ssh/id_rsa , añadir la llave privada que hemos creado, debes de estar en el directorio donde estan las llaves .ssh
+
+En github para asociar la llave creada, irse al menu settings-> SSH and GPG Keys
+luego al boton New SSH Key y ahi colocar el nombre de la llave y colocar el contenido del archivo id_rsa.pub luego dar click en Add SSH Key
 
 /******GIT TAG******/
 git tag -a nombretag -m "descripcion" codigo del commit , para agregar un TAG, se pueden visualizar especialmente en Git Hub
@@ -130,5 +138,10 @@ git push origin --tags, para subir los tags creados a Github
 
 git show-ref --tags, muestra la referencia del tag creado
 
-git tag -d nombredelTAg , para borrar el tag
-git push origin:ref/tags/v11.1 para borrar de github
+git tag -d nombredelTAg , para borrar el tag de git
+git push origin:refs/tags/nombredelTAg para borrar de github
+
+/****AGREGAR COLABORADORES***/
+Ir a los settings delrepositorio (no del usuario) luego a la opcion Collaborators y luego al boton Add people
+Luego buscar el usuario que sera el colaborador de nuestro proyecto y enviar la invitacion
+El nuevo colaborador debe de clonar el repositorio.

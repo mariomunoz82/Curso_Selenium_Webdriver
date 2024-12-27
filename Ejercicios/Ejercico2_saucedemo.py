@@ -19,7 +19,7 @@ class base_test(unittest.TestCase):
         self.driver=webdriver.Chrome(service=self.service)
         self.driver.maximize_window()
         t=2
-    """
+    
     def test_compra_succesful (self):
         driver=self.driver
         driver.get("https://www.saucedemo.com/")
@@ -109,7 +109,7 @@ class base_test(unittest.TestCase):
         error_logueo=WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH,"//h3[contains(@data-test,'error')]"))).text
         if error_logueo=="Epic sadface: You can only access '/cart.html' when you are logged in.":
             print("Prueba exitosa")
-        
+    """    
 
 
     def tearDown(self):
