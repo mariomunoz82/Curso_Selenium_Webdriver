@@ -30,9 +30,11 @@ git rm --cached prueba.txt
 
 code prueba.txt (nos abre el visual studio code)
 
-/*** Configuracion de usuario y correo 
+/*** Configuracion de usuario y correo ******/
+
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
+
 
 /**** GIT RESTORE , recuperar archivos borrados del repositorio (tiene que haber hecho commit antes)
 git restore
@@ -62,7 +64,7 @@ es el comando a asociar, luego colocar en git solo el nombre del alias para que 
 unalias rama, para eliminar un alias donde rama es el nombre del alias
 
 
-/****** GIT CHECKOUT, moverse entre los commits
+/****** GIT CHECKOUT , moverse entre los commits*******************/
 
 git checkout 979c9eca892608709785fa3b5936febc116b529c (me regresa a un estado anterior antes del ultimo commit)
 git checkout master --> nos regresa a la rama master donde estan todos los cambios
@@ -70,7 +72,7 @@ git checkout (codigo del commit que se obtiene de git log ) para moverse entre l
 
 
 
-/***COMANDOS DE VIM 
+/***COMANDOS DE VIM ***************/
 ESC --> :wq (para salir de vim)
 Presionas i , para el modo insertar
 ESC --> Shift+zz , Otra manera de salir de vim
@@ -119,14 +121,21 @@ git remote set-url origin url, donde la url es la obtenida del ssh del repositor
 
 /*******LLAVES SSH**********************/
 
-/*** Crear la llave****/
+/*** PASO 1 Crear la llave****/
 ssh-keygen -t rsa -b 4096 -C "marioalexis.2007@gmail.com" , para crear una llave publica y privada SSH , esto es por equipo 
 no por repositorio, colocarte en c/user/mario por ejemplo.
 
-eval $(ssh-agent -s) para verificar que el servicio este corriendo
-ssh-add ~/.ssh/id_rsa , añadir la llave privada que hemos creado, debes de estar en el directorio donde estan las llaves .ssh
+/****PASO 2 Verificar si el servicio esta encendido********/
 
-En github para asociar la llave creada, irse al menu settings-> SSH and GPG Keys
+eval $(ssh-agent -s) 
+
+/****PASO 3, Añadir la base localmente*****/
+ssh-add ~/.ssh/id_rsa , debes de estar en el directorio donde estan las llaves .ssh
+
+
+/*******PASO 4, Añadir la llave a Github*************/
+
+Irse al menu settings-> SSH and GPG Keys
 luego al boton New SSH Key y ahi colocar el nombre de la llave y colocar el contenido del archivo id_rsa.pub luego dar click en Add SSH Key
 
 /******GIT TAG******/
@@ -140,6 +149,7 @@ git show-ref --tags, muestra la referencia del tag creado
 
 git tag -d nombredelTAg , para borrar el tag de git
 git push origin:refs/tags/nombredelTAg para borrar de github
+
 
 /****AGREGAR COLABORADORES***/
 Ir a los settings delrepositorio (no del usuario) luego a la opcion Collaborators y luego al boton Add people
