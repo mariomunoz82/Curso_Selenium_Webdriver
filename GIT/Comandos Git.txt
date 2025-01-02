@@ -116,27 +116,32 @@ git remote remove origin, para eliminar un origin cuando se ha creado mal el rep
 
 rm -rf .git , para eliminar un repositorio local al crearlo por error
 
-git remote set-url origin url, donde la url es la obtenida del ssh del repositorio de github y es para cambiar el remote de https a ssh
+
 
 
 /*******LLAVES SSH**********************/
 
-/*** PASO 1 Crear la llave****/
+/*** PASO 1 Crear la llave
 ssh-keygen -t rsa -b 4096 -C "marioalexis.2007@gmail.com" , para crear una llave publica y privada SSH , esto es por equipo 
 no por repositorio, colocarte en c/user/mario por ejemplo.
 
-/****PASO 2 Verificar si el servicio esta encendido********/
+/****PASO 2 Verificar si el servicio esta encendido
 
 eval $(ssh-agent -s) 
 
-/****PASO 3, Añadir la base localmente*****/
+/****PASO 3, Añadir la base localmente
 ssh-add ~/.ssh/id_rsa , debes de estar en el directorio donde estan las llaves .ssh
 
 
-/*******PASO 4, Añadir la llave a Github*************/
+/*******PASO 4, Añadir la llave a Github
 
 Irse al menu settings-> SSH and GPG Keys
 luego al boton New SSH Key y ahi colocar el nombre de la llave y colocar el contenido del archivo id_rsa.pub luego dar click en Add SSH Key
+
+
+/*** PASO 4 , cambiar el remote
+git remote set-url origin url, donde la url es la obtenida del ssh del repositorio de github y es para cambiar el remote de https a ssh
+
 
 /******GIT TAG******/
 git tag -a nombretag -m "descripcion" codigo del commit , para agregar un TAG, se pueden visualizar especialmente en Git Hub
