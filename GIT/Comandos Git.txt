@@ -22,11 +22,11 @@ history
 /*** Repetir un comando (se coloca el codigo del comando con un signo !)
 !343
 
-/** Borrar un archivo
-git rm hola.txt
+/** Borrar un archivo totalmente del repositorio
+git rm <archivo>, se utiliza para eliminar un archivo tanto del repositorio Git como del directorio de trabajo
 
 /** Para deshacer el add . y ya no guardar los cambios
-git rm --cached prueba.txt
+git rm --cached prueba.txt Quita el archivo del área de staging y detiene su rastreo por parte de Git a menos que lo añadas explícitamente de nuevo mantiene el archivo en el directorio de trabajo.
 
 code prueba.txt (nos abre el visual studio code)
 
@@ -36,11 +36,21 @@ git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 
 
-/**** GIT RESTORE , recuperar archivos borrados del repositorio (tiene que haber hecho commit antes)
-git restore
+/**** RESTAURANDO ARCHIVOS
+git restore nombrearchivo , recuperar archivos borrados del repositorio (no tiene que haber hecho commit antes confirmando el borrado y no haber usado el comando git rm <archivo> ) tambien sirve para Restaurar un archivo modificado ejemplo: git restore main.py
+Esto deshará todos los cambios hechos en main.py y lo restaurará al estado en el último commit.
+
+git restore --staged <archivo> : Únicamente quita el archivo del área de staging. El archivo sigue siendo rastreado por Git y será incluido en futuros commits si lo añades de nuevo.
+
+git restore . ,Si quieres restaurar todos los cambios no confirmados en tu proyecto Esto deshará todos los cambios y recuperará los archivos eliminados en el directorio de trabajo.
+
+git checkout <commit> -- nombrearchivo , para restaurar un archivo cuando ya se ha hecho commit Aquí, <commit> puede ser un hash de commit, el nombre de una rama, o simplemente HEAD para referirse al último commit.
+
+git restore --staged prueba4.txt
+git restore prueba4.txt ambos comandos para restaurar un archivo si no se ha hecho commit confirmando el borrado y se haya usado git rm <archivo>
 
 /*****GIT RESET
-git reset nombredelarchivo.extension (BORRA EL ARCHIVO DEL REPOSITORIO9
+git reset nombredelarchivo.extension, comando similar al git rm --cached, ya no agrega el archivo al tracking del repositorio
 git reset 979c9eca89260870978 --hard, (borra todos los cambios hasta este commit)
 git reset 979c9eca89260870978 --soft, regresa a este commit pero mantiene los cambios en el staging
 
@@ -69,6 +79,8 @@ unalias rama, para eliminar un alias donde rama es el nombre del alias
 git checkout 979c9eca892608709785fa3b5936febc116b529c (me regresa a un estado anterior antes del ultimo commit)
 git checkout master --> nos regresa a la rama master donde estan todos los cambios
 git checkout (codigo del commit que se obtiene de git log ) para moverse entre las ramas
+git checkout HEAD -- prueba4.txt : Esto recuperará el archivo tal como estaba en el último commit. Se restaurará tanto en tu directorio de trabajo como en el índice de staging.
+
 
 
 
@@ -89,15 +101,20 @@ git diff 79c9eca892608709 92608709785fa3 , mostrar las diferencias entre un comm
 
 git push origin Rama1, para hacer push a las demas ramas que no sean main y subirlas a github
 
+
+
 /** GIT COMMIT -A
 git commit -a, esto manda directamente al staging, sin necesidad de hacer git add, es decir hace commit y add al mismo tiempo
 git commit -am " descripcion del commit",  la misma funcionalidad pero este no entra a vim
 
-/** GIT BRANCH
 
+
+/** GIT BRANCH
 git branch nombrerama, Crea una nueva rama
 git checkout nombrerama, cambias de la rama principal a la nueva rama o viceversa
 git branch, para ver las ramas creadas.
+
+
 
 /** GIT MERGE
 git merge nombrerama, dependiendo de adonde se quiera llevar los cambios debes de colocarte en esa rama, por ejemplo si quieres llevar los cambios hacia la rama master se debe asegurar que nos encontramos en la rama master antes de hacer el merge.
