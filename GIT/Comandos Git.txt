@@ -99,8 +99,6 @@ git show,  Nos muestra las diferencias que hay del commit actual al commit anter
 /** GIT DIFF
 git diff 79c9eca892608709 92608709785fa3 , mostrar las diferencias entre un commit y otro
 
-git push origin Rama1, para hacer push a las demas ramas que no sean main y subirlas a github
-
 
 
 /** GIT COMMIT -A
@@ -114,6 +112,7 @@ git branch nombrerama, Crea una nueva rama
 git checkout nombrerama, cambias de la rama principal a la nueva rama o viceversa
 git branch, para ver las ramas creadas.
 git branch -D nombrerama, para borrar una rama
+git push origin Rama1, para hacer push a las demas ramas que no sean main y subirlas a github
 
 
 
