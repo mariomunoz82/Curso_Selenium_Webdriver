@@ -50,7 +50,7 @@ git restore --staged prueba4.txt
 git restore prueba4.txt ambos comandos para restaurar un archivo si no se ha hecho commit confirmando el borrado y se haya usado git rm <archivo>
 
 /*****GIT RESET
-git reset nombredelarchivo.extension, comando similar al git rm --cached, ya no agrega el archivo al tracking del repositorio
+git reset nombredelarchivo.extension, comando similar a git restore --staged
 git reset 979c9eca89260870978 --hard, (borra todos los cambios hasta este commit)
 git reset 979c9eca89260870978 --soft, regresa a este commit pero mantiene los cambios en el staging
 
@@ -78,7 +78,7 @@ unalias rama, para eliminar un alias donde rama es el nombre del alias
 
 git checkout 979c9eca892608709785fa3b5936febc116b529c (me regresa a un estado anterior antes del ultimo commit)
 git checkout master --> nos regresa a la rama master donde estan todos los cambios
-git checkout (codigo del commit que se obtiene de git log ) para moverse entre las ramas
+git checkout nombrerama para moverse entre las ramas
 git checkout HEAD -- prueba4.txt : Esto recuperará el archivo tal como estaba en el último commit. Se restaurará tanto en tu directorio de trabajo como en el índice de staging.
 
 
@@ -113,6 +113,7 @@ git commit -am " descripcion del commit",  la misma funcionalidad pero este no e
 git branch nombrerama, Crea una nueva rama
 git checkout nombrerama, cambias de la rama principal a la nueva rama o viceversa
 git branch, para ver las ramas creadas.
+git branch -D nombrerama, para borrar una rama
 
 
 
@@ -156,8 +157,11 @@ Irse al menu settings-> SSH and GPG Keys
 luego al boton New SSH Key y ahi colocar el nombre de la llave y colocar el contenido del archivo id_rsa.pub luego dar click en Add SSH Key
 
 
-/*** PASO 4 , cambiar el remote
-git remote set-url origin url, donde la url es la obtenida del ssh del repositorio de github y es para cambiar el remote de https a ssh
+/*** PASO 5 , cambiar el remote
+git remote set-url origin git@github.com:mariomunoz82/Git_y_Github.git, donde la url es la obtenida del ssh del repositorio de github y es para cambiar el remote de https a ssh
+
+
+
 
 
 /******GIT TAG******/
