@@ -124,12 +124,13 @@ git merge Rama1 --no-edit para evitar que VIM se abra
 
 /***********GIT HUB***********/
 
-/****git remote****/
-git remote add origin (ruta del repositorio en github) , para mandar el repositorio de manera remota
+/****GIT REMOTE****/
+git remote add origin (url del repositorio en github) , para mandar el repositorio de manera remota
 
-git remote
+git remote , para ver el repositorio remoto en el que nos encontramos.
 git remote -v , para ver a que tiene acceso el origin (repositorio remoto) si al fetch o al pull
 git remote remove origin, para eliminar un origin cuando se ha creado mal el repositorio remoto y da conflictos
+git remote set-url --push origin (url del repositorio en github) , para cambiar a una nueva url
 
 rm -rf .git , para eliminar un repositorio local al crearlo por error
 
